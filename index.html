@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Vintage Français</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f4efe6;
+      --ink:#2b2b2b;
+      --accent:#8b5e3c;
+      --border:#c9b79c;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Libre Baskerville', serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    header{
+      text-align:center;
+      padding:60px 20px 40px;
+      border-bottom:2px solid var(--border);
+      background:#efe6d8;
+    }
+
+    header h1{
+      font-family:'Playfair Display', serif;
+      font-size:3rem;
+      margin:0;
+      letter-spacing:2px;
+    }
+
+    header p{
+      margin-top:10px;
+      font-style:italic;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:25px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:var(--ink);
+      font-weight:bold;
+      border-bottom:2px solid transparent;
+      padding-bottom:4px;
+    }
+
+    nav a:hover{
+      border-color:var(--accent);
+    }
+
+    section{
+      max-width:900px;
+      margin:60px auto;
+      padding:0 20px;
+    }
+
+    h2{
+      font-family:'Playfair Display', serif;
+      font-size:2.2rem;
+      text-align:center;
+      margin-bottom:40px;
+      position:relative;
+    }
+
+    h2::after{
+      content:"";
+      width:80px;
+      height:2px;
+      background:var(--accent);
+      display:block;
+      margin:15px auto 0;
+    }
+
+    .menu{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px 60px;
+    }
+
+    .item{
+      border-bottom:1px dashed var(--border);
+      padding-bottom:10px;
+    }
+
+    .item strong{
+      display:block;
+      font-family:'Playfair Display', serif;
+      font-size:1.1rem;
+    }
+
+    .item span{
+      font-size:0.9rem;
+      font-style:italic;
+    }
+
+    .full{
+      grid-column:1/-1;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      border-top:2px solid var(--border);
+      background:#efe6d8;
+      font-size:0.9rem;
+    }
+
+    @media(max-width:768px){
+      .menu{grid-template-columns:1fr;}
+      header h1{font-size:2.3rem;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  
+  <img src="twins.png" alt="A small icon" style="width: 170px;height:100px;vertical-align:middle;border-radius: 50%;">
+  <nav>
+    <a href="#boissons">Boissons</a>
+    <a href="#plats">Plats</a>
+    <a href="#desserts">Desserts</a>
+    <a href="#froids">Plats Froids</a>
+  </nav>
+</header>
+
+<section id="boissons">
+  <h2>Boissons</h2>
+  <div class="menu">
+    <div class="item"><strong>Espresso — 3 DT</strong><span>Café intense à l’italienne</span></div>
+    <div class="item"><strong>Café Allongé — 4 DT</strong><span>Doux et équilibré</span></div>
+    <div class="item"><strong>Cappuccino — 5 DT</strong><span>Mousse de lait onctueuse</span></div>
+    <div class="item"><strong>Café Crème — 5 DT</strong><span>Lait chaud & café</span></div>
+    <div class="item"><strong>Thé à la Menthe — 4 DT</strong><span>Menthe fraîche</span></div>
+    <div class="item"><strong>Chocolat Chaud — 5 DT</strong><span>Cacao riche et crémeux</span></div>
+    <div class="item full"><strong>Limonade Maison — 6 DT</strong><span>Citron frais & sucre de canne</span></div>
+  </div>
+</section>
+
+<section id="plats">
+  <h2>Plats</h2>
+  <div class="menu">
+    <div class="item"><strong>Croque Monsieur — 12 DT</strong><span>Jambon, fromage, sauce béchamel</span></div>
+    <div class="item"><strong>Croque Madame — 13 DT</strong><span>Avec œuf au plat</span></div>
+    <div class="item"><strong>Quiche Lorraine — 11 DT</strong><span>Lardons & fromage</span></div>
+    <div class="item"><strong>Omelette Fromage — 10 DT</strong><span>Œufs fermiers</span></div>
+    <div class="item full"><strong>Salade du Marché — 9 DT</strong><span>Légumes frais de saison</span></div>
+  </div>
+</section>
+
+<section id="froids">
+  <h2>Plats Froids</h2>
+  <div class="menu">
+    <div class="item"><strong>Croque Monsieur — 12 DT</strong><span>Jambon, fromage, sauce béchamel</span></div>
+    <div class="item"><strong>Croque Madame — 13 DT</strong><span>Avec œuf au plat</span></div>
+    <div class="item"><strong>Quiche Lorraine — 11 DT</strong><span>Lardons & fromage</span></div>
+    <div class="item"><strong>Omelette Fromage — 10 DT</strong><span>Œufs fermiers</span></div>
+    <div class="item full"><strong>Salade du Marché — 9 DT</strong><span>Légumes frais de saison</span></div>
+  </div>
+</section>
+
+<section id="desserts">
+  <h2>Desserts</h2>
+  <div class="menu">
+    <div class="item"><strong>Tarte aux Pommes — 7 DT</strong><span>Pâte maison</span></div>
+    <div class="item"><strong>Crème Brûlée — 7 DT</strong><span>Vanille de Madagascar</span></div>
+    <div class="item"><strong>Fondant au Chocolat — 8 DT</strong><span>Cœur coulant</span></div>
+    <div class="item"><strong>Mousse au Chocolat — 8 DT</strong><span>Recette traditionnelle</span></div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Café de la Rue — Fait avec amour à la française
+</footer>
+
+</body>
+</html>
