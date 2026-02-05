@@ -3,187 +3,736 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Café Vintage Français</title>
+  <title>Twins Resto & Salon de Thé - Menu Complet</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f4efe6;
-      --ink:#2b2b2b;
-      --accent:#8b5e3c;
-      --border:#c9b79c;
-    }
-
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      font-family:'Libre Baskerville', serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
-    }
-
-    header{
-      text-align:center;
-      padding:60px 20px 40px;
-      border-bottom:2px solid var(--border);
-      background:#efe6d8;
-    }
-
-    header h1{
-      font-family:'Playfair Display', serif;
-      font-size:3rem;
-      margin:0;
-      letter-spacing:2px;
-    }
-
-    header p{
-      margin-top:10px;
-      font-style:italic;
-    }
-
-    nav{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      margin-top:25px;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:var(--ink);
-      font-weight:bold;
-      border-bottom:2px solid transparent;
-      padding-bottom:4px;
-    }
-
-    nav a:hover{
-      border-color:var(--accent);
-    }
-
-    section{
-      max-width:900px;
-      margin:60px auto;
-      padding:0 20px;
-    }
-
-    h2{
-      font-family:'Playfair Display', serif;
-      font-size:2.2rem;
-      text-align:center;
-      margin-bottom:40px;
-      position:relative;
-    }
-
-    h2::after{
-      content:"";
-      width:80px;
-      height:2px;
-      background:var(--accent);
-      display:block;
-      margin:15px auto 0;
-    }
-
-    .menu{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px 60px;
-    }
-
-    .item{
-      border-bottom:1px dashed var(--border);
-      padding-bottom:10px;
-    }
-
-    .item strong{
-      display:block;
-      font-family:'Playfair Display', serif;
-      font-size:1.1rem;
-    }
-
-    .item span{
-      font-size:0.9rem;
-      font-style:italic;
-    }
-
-    .full{
-      grid-column:1/-1;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      border-top:2px solid var(--border);
-      background:#efe6d8;
-      font-size:0.9rem;
-    }
-
-    @media(max-width:768px){
-      .menu{grid-template-columns:1fr;}
-      header h1{font-size:2.3rem;}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  
-  <img src="twins.png" alt="A small icon" style="width: 170px;height:100px;vertical-align:middle;border-radius: 50%;">
+<header id="header">
+  <img src="twins.png" alt="Twins Café Logo" style="width: 170px;height:100px;vertical-align:middle;border-radius: 50%;">
+  <h4>Resto & Salon de Thé </h4>
+  <p>Une Séduction pour le Goût et le Regard</p>
   <nav>
-    <a href="#boissons">Boissons</a>
-    <a href="#plats">Plats</a>
-    <a href="#desserts">Desserts</a>
-    <a href="#froids">Plats Froids</a>
+    <a href="#petitdejeuner">Petit Déjeuner</a>
+    <a href="#nosgaufres">Gaufres</a>
+    <a href="#noscrepes">Crêpes</a>
+    <a href="#nossanwish">Sanwishes</a>
+    <a href="#nospizzas">Pizzas</a>
+    <a href="#nosviandes">Viandes</a>
+    <a href="#noscafesetchocolats">Cafés</a>
+    <a href="#nosboissons">Boissons</a>
+    <a href="#nosthes">Thés</a>
+    <a href="#nosglaces">Glaces</a>
+    <a href="#nossmoothies">Smoothies</a>
+    <a href="#nosjus">jus</a>
+    <a href="#noscocktails">Cocktails</a>
+    <a href="#nosgateaux">Gâteaux</a>
+    <a href="#nosviennoiseries">Viennoiseries</a>
+    <a href="#nosdesserts">Desserts</a>
+    <div class="item full"><strong>Chicha au choix (servi à la terrasse) — 15.0 DT</strong></div>
   </nav>
 </header>
 
-<section id="boissons">
-  <h2>Boissons</h2>
+<!-- Menu sections starting from Petit Déjeuner upwards to Nos viandes [code:1] -->
+<section id="petitdejeuner">
+  <h2>Petit Déjeuner</h2> <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
   <div class="menu">
-    <div class="item"><strong>Espresso — 3 DT</strong><span>Café intense à l’italienne</span></div>
-    <div class="item"><strong>Café Allongé — 4 DT</strong><span>Doux et équilibré</span></div>
-    <div class="item"><strong>Cappuccino — 5 DT</strong><span>Mousse de lait onctueuse</span></div>
-    <div class="item"><strong>Café Crème — 5 DT</strong><span>Lait chaud & café</span></div>
-    <div class="item"><strong>Thé à la Menthe — 4 DT</strong><span>Menthe fraîche</span></div>
-    <div class="item"><strong>Chocolat Chaud — 5 DT</strong><span>Cacao riche et crémeux</span></div>
-    <div class="item full"><strong>Limonade Maison — 6 DT</strong><span>Citron frais & sucre de canne</span></div>
+    <div class="item full"><strong>Matinal — 12.0 DT</strong><span>Café au choix, jus, viennoiserie</span></div>
+    <div class="item"><strong>Everyday — 18.0 DT</strong><span>Café au choix, jus, viennoiserie, yaourt, confiture, miel, œuf, beurre</span></div>
+    <div class="item"><strong>Kids — 18.0 DT</strong><span>Chocolat au lait, pancake, viennoiserie, yaourt, fraidoux, céréales, confiture, chocolat à tartiner "Nutella"</span></div>
+    <div class="item full"><strong>Weekend — 29.0 DT</strong><span>Café au choix, jus, yaourt, viennoiserie, crêpe, miel, beurre, confiture, fruit de saison, mini salé, omelette, assortiment de fromage et charcuterie</span></div>
+    <div class="item"><strong>Champion "healthy" — 29.0 DT</strong><span>Verre de lait, omelette, ricotta, fruit de saison, yaourt, jus detox, granola, amandes</span></div>
+    <div class="item full"><strong>Sobhiya "traditionnel" — 30.0 DT</strong><span>Café au choix, œuf, jus bsissa, droaa au chamiya, ricotta au miel, hrissa à l'huile d'olive, ojja Nabeulienne</span></div>
+    <div class="item full"><strong>Brunch midday 2pax — 49.0 DT</strong><span>Café au choix et jus (pour deux), viennoiserie, yaourt, gâteau voyageur, beurre, miel, confiture, chocolat à
+tartiner, ricotta, assortiment de fromages et charcuterie, mini crêpe, omelette, mini salé, fruit de saison, ojja Nabeulienne</span></div>
+    <div class="item full"><strong>Brunch Twins "Royal" 2pax — 69.0 DT</strong><span>Café NESPRESSO au choix, jus (pour deux), viennoiserie, eau, ricotta, assortiment de fromages et charcuterie, chocolat à tartiner nutella, omelette, mini gaufre, mini crêpe, mignardise, petit gâteau, bsissa énergétique, droaa au chamiya, beurre, miel, confiture, ojja Nabeulienne</span></div>
   </div>
 </section>
 
-<section id="plats">
-  <h2>Plats</h2>
+<section id="supplementsdesserts">
+  <h2>Suppléments (petitdejeuner)</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
   <div class="menu">
-    <div class="item"><strong>Croque Monsieur — 12 DT</strong><span>Jambon, fromage, sauce béchamel</span></div>
-    <div class="item"><strong>Croque Madame — 13 DT</strong><span>Avec œuf au plat</span></div>
-    <div class="item"><strong>Quiche Lorraine — 11 DT</strong><span>Lardons & fromage</span></div>
-    <div class="item"><strong>Omelette Fromage — 10 DT</strong><span>Œufs fermiers</span></div>
-    <div class="item full"><strong>Salade du Marché — 9 DT</strong><span>Légumes frais de saison</span></div>
+    <div class="item"><strong>Mini omelette — 5.0 DT</strong></div>
+    <div class="item"><strong>Confiture — 2.5 DT</strong></div>
+    <div class="item"><strong>Beurre — 2.5 DT</strong></div>
+    <div class="item"><strong>Miel ou œuf — 3.0 DT</strong></div>
+    <div class="item"><strong>Fruit de saison — 4.0 DT</strong></div>
+    <div class="item"><strong>Ricotta — 3.5 DT</strong></div>
+    <div class="item"><strong>Crème chantilly — 3.0 DT</strong></div>
+    <div class="item"><strong>Chocolat à tartiner — 3.0 DT</strong></div>
+    <div class="item full"><strong>Chocolat à tartiner "Nutella" — 7.0 DT</strong></div>
+    <div class="item"><strong>Assortiment de fromages — 7.0 DT</strong></div>
+    <div class="item"><strong>Droaa au chamiya — 6.0 DT</strong></div>
+    <div class="item"><strong>Yaourt — 3.5 DT</strong></div>
+    <div class="item"><strong>Jus — 4.0 DT</strong></div>
+    <div class="item"><strong>Chocolat Twins — 3.0 DT</strong></div>
   </div>
 </section>
 
-<section id="froids">
-  <h2>Plats Froids</h2>
+<section id="nosomelettes">
+  <h2>Nos Omelettes</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
   <div class="menu">
-    <div class="item"><strong>Croque Monsieur — 12 DT</strong><span>Jambon, fromage, sauce béchamel</span></div>
-    <div class="item"><strong>Croque Madame — 13 DT</strong><span>Avec œuf au plat</span></div>
-    <div class="item"><strong>Quiche Lorraine — 11 DT</strong><span>Lardons & fromage</span></div>
-    <div class="item"><strong>Omelette Fromage — 10 DT</strong><span>Œufs fermiers</span></div>
-    <div class="item full"><strong>Salade du Marché — 9 DT</strong><span>Légumes frais de saison</span></div>
+    <div class="item"><strong>Thon, fromage — 12.0 DT</strong></div>
+    <div class="item full"><strong>Espagnole — 13.0 DT</strong><span>Fromage, tomate, oignon, persil, piment</span></div>
+    <div class="item full"><strong>Twins — 15.0 DT</strong><span>Fromage, thon ou charcuterie, tomate, oignon, persil, piment</span></div>
   </div>
 </section>
 
-<section id="desserts">
-  <h2>Desserts</h2>
+
+<section id="nosgaufres">
+  <h2>Nos Gaufres</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu"> <img src="gauffres.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+    <div class="item"><strong>Gaufre nature — 9.0 DT</strong></div>
+    <div class="item"><strong>Gaufre Nutella — 13.0 DT</strong></div>
+    <div class="item"><strong>Gaufre Fruitella — 15.0 DT</strong><span>Fruits, Nutella</span></div>
+    <div class="item"><strong>Gaufre spéculos — 15.0 DT</strong></div>
+    <div class="item"><strong>Gaufre Nutella fruits secs — 15.0 DT</strong></div>
+    <div class="item"><strong>Gaufre Nutella Noisette — 14.0 DT</strong></div>
+    <div class="item full"><strong>Gaufre Twins — 17.0 DT</strong><span>Nutella, banane, fruits, fruits secs, boule de glace</span></div>
+  </div>
+</section>
+
+<section id="supplementsgaufres">
+  <h2>Suppléments (gaufres)</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
   <div class="menu">
-    <div class="item"><strong>Tarte aux Pommes — 7 DT</strong><span>Pâte maison</span></div>
-    <div class="item"><strong>Crème Brûlée — 7 DT</strong><span>Vanille de Madagascar</span></div>
-    <div class="item"><strong>Fondant au Chocolat — 8 DT</strong><span>Cœur coulant</span></div>
-    <div class="item"><strong>Mousse au Chocolat — 8 DT</strong><span>Recette traditionnelle</span></div>
+    <div class="item"><strong>Chantilly — 3.0 DT</strong></div>
+    <div class="item"><strong>miel— 3.0 DT</strong></div>
+    <div class="item"><strong>fruit — 4.0 DT</strong></div>
+    <div class="item"><strong>Chocolat à tartiner — 5.0 DT</strong></div>
+    <div class="item"><strong>Choco à tart nutella — 7.0 DT</strong></div>
+    <div class="item"><strong>Boule de glace vanille — 4.0 DT</strong></div>
+    <div class="item"><strong>Fruit secs noncassé — 5.0 DT</strong></div>
+    <div class="item"><strong>Noisette — 4.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosbubbleswaffle"> 
+  <h2>Nos Bubbles Waffle</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="bubble.png" style="width:90px;height:90px;"   >
+  <div class="menu">
+    <div class="item"><strong>Bubble waffle au chocolat nutella — 12.0 DT</strong></div>
+    <div class="item full"><strong>Bubble waffle Fruitella — 15.0 DT</strong><span>nutella, fruits secs, crème chantilly</span></div>
+    <div class="item full"><strong>Bubble waffle TWINS — 20.0 DT</strong><span>nutella, fruits secs, pépites chocolat, boule de glace vanille</span></div>
+  </div>
+</section>
+
+<section id="noscrepes">
+  <h2>Nos Crêpes Sucrées</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Crêpe chocolat — 10.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella — 13.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Banane — 15.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Banane Noisette — 16.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Oreo — 15.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Snickers — 17.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Kinder Bueno — 17.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Ferrero Rocher — 17.0 DT</strong></div>
+    <div class="item"><strong>Crêpe Nutella Bounty — 17.0 DT</strong></div>
+    <div class="item full"><strong>Crêpe Twins — 18.0 DT</strong><span>Nutella, fruits, fruits secs et boule de glace</span></div>
+  </div>
+</section>
+
+<section id="noscrepessalees">
+  <h2>Nos Crêpes Salées</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Fromage — 10.0 DT</strong></div>
+    <div class="item"><strong>Thon, Fromage — 12.0 DT</strong></div>
+    <div class="item"><strong>Charcuterie (jambon, fromage) — 12.0 DT</strong></div>
+    <div class="item"><strong>Poulet, fromage — 13.0 DT</strong></div>
+    <div class="item full"><strong>Tunisienne (harissa, œuf, thon) — 14.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nossanwish">
+  <h2>Nos Panuzzo</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="pannuzo.png" style="width:190px;height:100px;margin-left: 50px;" >
+  <div class="menu">
+    <div class="item"><strong>Panuzzo Tunisien — 15.0 DT</strong><span>thon, fromage</span></div>
+    <div class="item"><strong>Panuzzo Fermier — 16.0 DT</strong><span>escalope,fromage</span></div>
+    <div class="item full"><strong>Panuzzo Mexicain — 17.0 DT</strong><span>viande hachée</span></div>
+  </div>
+</section>
+
+
+<section id="nosbaguettesfarcies">
+  <h2>Baguettes Farcies</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Baguette farcie escalope fromage — 15.0 DT</strong></div>
+    <div class="item"><strong>Baguette farcie thon fromage — 14.0 DT</strong></div>
+    <div class="item full"><strong>Baguette farcie spéciale — 19.0 DT</strong><span>Escalope, jambon, thon, fromage</span></div>
+  </div>
+</section>
+
+
+
+<section id="nossandwichlibanaisetturc">
+  <h2>Sandwichs Libanais & Turc</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Sandwich libanais — 14.0 DT</strong><span>escalope de poulet</span></div>
+    <div class="item"><strong>Sandwich turc — 12.0 DT</strong><span>thon fromage</span></div>
+    <div class="item"><strong>Mini sandwich libanais — 8.0 DT</strong></div>
+    <div class="item full"><strong>Mini Sandwich turc — 7.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="noshamburgers">
+  <h2>Nos Hamburgers</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="hamburger.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item"><strong>Classique — 15.0 DT</strong><span>Viande, sauce fromagère, frite - Big Burger Double Cheese</span></div>
+    <div class="item"><strong>Chicken — 15.0 DT</strong><span>Escalope, sauce fromagère, frite - Big Chicken Double Cheese</span></div>
+    <div class="item full"><strong>Burger Twins — 22.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nospaninis">
+  <h2>Nos Paninis</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Thon Fromage — 13.0 DT</strong></div>
+    <div class="item"><strong>Poulet Fromage — 13.0 DT</strong></div>
+    <div class="item"><strong>Jambon Fromage — 13.0 DT</strong></div>
+  </div>
+</section>
+
+
+<section id="supplements">
+  <h2>Suppléments</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Fromage — 5.0 DT</strong></div>
+    <div class="item"><strong>Champignon — 5.0 DT</strong></div>
+    <div class="item"><strong>Sauce au choix — 3.0 DT</strong></div>
+    <div class="item"><strong>Œuf — 3.0 DT</strong></div>
+    <div class="item"><strong>Thon — 5.0 DT</strong></div>
+    <div class="item"><strong>Escalope — 5.0 DT</strong></div>
+    <div class="item full"><strong>Frite — 8.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nospizzas">
+  <h2>Nos Pizzas</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="pizza.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item"><strong>Margherita — 18.0 DT</strong></div>
+    <div class="item"><strong>Neptune — 22.0 DT</strong></div>
+    <div class="item"><strong>Regina — 20.0 DT</strong><span>mozzarella, champignon, jambon de boeuf</span></div>
+    <div class="item"><strong>Pepperoni — 20.0 DT</strong></div>
+    <div class="item"><strong>Quatre fromages — 24.0 DT</strong></div>
+    <div class="item"><strong>Végétarienne — 23.0 DT</strong><span>oignon, poivrons, courgettes, aubergine</span></div>
+    <div class="item"><strong>Fruits de mer — 27.0 DT</strong></div>
+    <div class="item full"><strong>Calzoni thon fromage — 20.0 DT</strong></div>
+    <div class="item"><strong>Calzoni poulet OU thon — 20.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="pizzasauceblanche">
+  <h2>Pizza Sauce Blanche</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Sous bois — 23.0 DT</strong><span>jambon de dinde, champignon, oignon</span></div>
+    <div class="item"><strong>Norvégienne — 25.0 DT</strong><span>saumon fromage</span></div>
+    <div class="item"><strong>Mexicaine— 25.0 DT</strong><span>viande hachée</span></div>
+    <div class="item"><strong>Calzoni épinard chevrettes — 22.0 DT</strong></div>
+    <div class="item"><strong>Calzoni poulet sauce pesto — 19.0 DT</strong></div>
+    <div class="item"><strong>Calzoni épinard fromage — 20.0 DT</strong></div>
+    <div class="item full"><strong>Mini pizza sous-bois / Neptune — 14.0 DT</strong></div>
+  </div>
+</section>
+
+
+
+<section id="nosentrees">
+  <h2>Nos Entrées</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Soupe du jour — 7.0 DT</strong></div>
+    <div class="item"><strong>Calamars dorés — 19.0 DT</strong></div>
+    <div class="item"><strong>Brick Tunisienne — 9.0 DT</strong></div>
+    <div class="item"><strong>Brick aux chevrettes — 9.0 DT</strong></div>
+    <div class="item"><strong>Salade César — 19.0 DT</strong></div>
+    <div class="item"><strong>Salade russe— 19.0 DT</strong></div>
+    <div class="item"><strong>Salade au saumon — 23.0 DT</strong></div>
+    <div class="item"><strong>Salade exotique — 23.0 DT</strong></div>
+    <div class="item"><strong>Salade de poulpes — 28.0 DT</strong></div>
+    <div class="item"><strong>César twins — 21.0 DT</strong></div>
+    <div class="item full"><strong>Salade twins — 23.0 DT</strong><span>laitue, tomate, poivron, pomme, ananas, kiwi, grain de courge, noix</span></div>
+    <div class="item"><strong>Ojja Fruits de mer — 31.0 DT</strong></div>
+    <div class="item"><strong>Ojja escalope — 25.0 DT</strong></div>
+    <div class="item"><strong>Ojja Merguez — 25.0 DT</strong></div>
+    <div class="item full"><strong>Plat frite — 8.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nospasta">
+  <h2>Nos Pasta</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="pasta.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item full"><strong>(Trio de sauce au choix : rosé, blanche, rouge)</strong><span>Farfalles - Pennes - Spaghetti - Tagliatelles</span></div>
+    <div class="item"><strong>Carbonara — 24.0 DT</strong></div>
+    <div class="item"><strong>Puttanesca — 19.0 DT</strong></div>
+    <div class="item"><strong>Calamars / Chevrettes (sauce Rosé) — 35.0 DT</strong></div>
+    <div class="item"><strong>Spaghetti aux fruits de mer — 39.0 DT</strong></div>
+    <div class="item"><strong>Poulet pesto — 22.0 DT</strong></div>
+    <div class="item"><strong>Lasagne maison — 24.0 DT</strong></div>
+    <div class="item"><strong>Bolognaise — 26.0 DT</strong></div>
+    <div class="item"><strong>Tagliatelle au saumon — 28.0 DT</strong></div>
+    <div class="item"><strong>Alfredo (poulet sauce champignon) — 26.0 DT</strong></div>
+    <div class="item full"><strong>Pasta 4 fromages — 24.0 DT</strong></div>
+    <div class="item"><strong>Ravioli 4 fromages — 25.0 DT</strong></div>
+    <div class="item"><strong>Ravioli ricotta épinards — 28.0 DT</strong></div>
+    <div class="item"><strong>Ravioli au saumon — 29.0 DT</strong></div>
+    <div class="item"><strong>Risotto aux fruits de mer — 37.0 DT</strong></div>
+    <div class="item"><strong>Risotto sauce blanche — 34.0 DT</strong><span>(épinard, chevrettes)</span></div>
+    <div class="item full"><strong>Gratin aux fruits de mer — 37.0 DT</strong></div>
+    <div class="item"><strong>Gratin aux poulets, sauce pesto — 32.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosviandes">
+  <h2>Nos Viandes</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="steak.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item full"><strong>Entrecôte de boeuf — 44.0 DT</strong><span>champignon de Paris, jus de boeuf, purée, crème de carotte, légumes, potatoes</span></div>
+    <div class="item"><strong>Filet de boeuf — 49.0 DT</strong><span>champignon de Paris, jus de boeuf, purée, crème de carotte, légumes, potatoes, pomme pavée</span></div>
+    <div class="item"><strong>Emincé de boeuf — 43.0 DT</strong><span>sauce truffe, pâte</span></div>
+    <div class="item"><strong>Côtelette d'agneau — 43.0 DT</strong></div>
+    <div class="item full"><strong>500g viande d'agneau — 85.0 DT</strong></div>
+    <div class="item"><strong>Grillade Mixte — 48.0 DT</strong><span>côtelette, steak de boeuf, escalope, 2 merguez, foie</span></div>
+  </div>
+</section>
+
+
+<section id="nospoissonssauvages">
+  <h2>Nos Poissons Sauvages</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Daurade grillée — 59.0 DT</strong></div>
+    <div class="item"><strong>Loup grillé — 59.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nospoissons">
+  <h2>Nos Poissons</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Daurade ou loup grillé — 30.0 DT</strong></div>
+    <div class="item"><strong>Filet de poisson (Loup ou Daurade) — 35.0 DT</strong></div>
+    <div class="item"><strong>Crevettes royales grillées — 45.0 DT</strong></div>
+    <div class="item"><strong>Saumon grillé — 38.0 DT</strong></div>
+    <div class="item full"><strong>Tapas terre et mer (2 pax) — 125.0 DT</strong><span>fruits de mer sautés ou panés, calamar doré, escalope panée, moules marinées, boulette de poulet, daurade, potatoes, pâte</span></div>
+  </div>
+</section>
+
+<section id="nosvolailles">
+  <h2>Nos Volailles</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="vol.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item"><strong>Escalope grillée — 20.0 DT</strong></div>
+    <div class="item"><strong>Escalope panée — 22.0 DT</strong></div>
+    <div class="item"><strong>Double cuisse de poulet — 23.0 DT</strong></div>
+    <div class="item"><strong>Escalope sauce champignons — 23.0 DT</strong></div>
+    <div class="item"><strong>Blanc de poulet croustillant au panko — 27.0 DT</strong></div>
+    <div class="item full"><strong>Trio de poulet — 55.0 DT</strong></div>
+    <div class="item"><strong>Cordon Bleu — 30.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="menuenfant">
+  <h2>Menu Enfant</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Poulet PINCO + Salade + Frites — 18.0 DT</strong></div>
+  </div>
+</section>
+
+
+
+<!-- Add these new sections after "Nos Viandes" and before footer -->
+
+<section id="noscafesetchocolats">
+  <h2>Nos Cafés et Chocolats</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="coffe.png" alt="coke" style="width:190px;height:100px;margin-left: 50px;"   >
+  <div class="menu">
+    <div class="item"><strong>Express — 4.0 DT</strong></div>
+    <div class="item"><strong>Express Aromatisé (noisette, caramel, vanille, Nestlé) — 6.0 DT</strong></div>
+    <div class="item"><strong>American — 5.0 DT</strong></div>
+    <div class="item"><strong>Capucin — 4.5 DT</strong></div>
+    <div class="item"><strong>Café crème — 5.0 DT</strong></div>
+    <div class="item"><strong>Tasse de lait — 3.0 DT</strong></div>
+    <div class="item full"><strong>Café glacé "froid" — 9.0 DT</strong></div>
+    <div class="item"><strong>Café affogato (Express + glace vanille) — 7.0 DT</strong></div>
+    <div class="item"><strong>Café latte aromatisé — 8.0 DT</strong></div>
+    <div class="item"><strong>Ice café aux choix (caramel, noisette, vanille) — 10.0 DT</strong></div>
+  </div>
+  <div class="menu">
+    <div class="item full"><strong>Spécialités</strong></div>
+    <div class="item full"><strong>Café XXL (café au choix, boule de glace, gâteaux, jus, chocolat twins, chantilly, mignardise) — 15.0 DT</strong></div>
+    <div class="item"><strong>Café Turc (café turc, pâtisserie tunisienne) — 10.0 DT</strong></div>
+    <div class="item"><strong>Chocolat au lait — 4.5 DT</strong></div>
+    <div class="item"><strong>Café liégeois — 9.5 DT</strong></div>
+    <div class="item"><strong>Chocolat liégeois — 9.5 DT</strong></div>
+    <div class="item full"><strong>Café latté aromatisé (Caramel, noisette) — 9.5 DT</strong></div>
+    <div class="item"><strong>Café bonbon — 7.0 DT</strong></div>
+    <div class="item"><strong>Cappuccino — 8.0 DT</strong></div>
+    <div class="item"><strong>Chocolat chaud dark — 9.0 DT</strong></div>
+    <div class="item full"><strong>Chocolat chaud twins — 12.0 DT</strong></div>
+  </div>
+</section>
+
+
+
+<section id="nosboissons">
+  <h2>Nos Boissons</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="coke.png" alt="coke" style="width:190px;height:130px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item"><strong>Soda — 4.0 DT</strong></div>
+    <div class="item"><strong>Eau 1L — 3.7 DT</strong></div> 
+    <div class="item"><strong>Eau 0.5L — 2.0 DT</strong></div>
+    <div class="item"><strong>Eau gazéifiée — 4.0 DT</strong></div>
+    <div class="item full"><strong>Bière sans alcool — 5.0 DT</strong></div>
+    <div class="item"><strong>Boisson énergétique — 10.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosmojitos">
+  <h2>Nos Mojitos</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Virgin — 10.0 DT</strong></div>
+    <div class="item"><strong>Ananas — 12.0 DT</strong></div>
+    <div class="item"><strong>Blue — 12.0 DT</strong></div>
+    <div class="item"><strong>Pêche — 12.0 DT</strong></div>
+    <div class="item"><strong>Red (fruits rouges) — 12.0 DT</strong></div>
+    <div class="item full"><strong>Water melon Basilic — 14.0 DT</strong></div>
+    <div class="item"><strong>Exotique — 14.0 DT</strong></div>
+    <div class="item full"><strong>Power énergétique — 16.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="supplementsboissons">
+  <h2>Suppléments (Boissons)</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Arôme au choix — 3.0 DT</strong></div>
+    <div class="item"><strong>Nestlé — 3.0 DT</strong></div>
+    <div class="item"><strong>Amandes — 3.0 DT</strong></div>
+    <div class="item full"><strong>Chocolat twins — 3.0 DT</strong></div>
+    <div class="item"><strong>Crème chantilly — 3.0 DT</strong></div>
+  </div>
+</section>
+
+
+<section id="noscafesitaliens">
+  <h2>Nos Cafés Italiens</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Nespresso expresso — 7.0 DT</strong></div>
+    <div class="item"><strong>Nespresso Noisette (capucin) — 7.5 DT</strong></div>
+    <div class="item"><strong>Nespresso café crème — 8.0 DT</strong></div>
+    <div class="item full"><strong>Lavazza expresso — 6.0 DT</strong></div>
+    <div class="item"><strong>Lavazza Noisette (capucin) — 6.5 DT</strong></div>
+    <div class="item"><strong>Lavazza café crème — 7.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosthes">
+  <h2>Nos Thés</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="tea.png" alt="tea" style="width:190px;height:100px;margin-left: 50px;" >
+  <div class="menu">
+    <div class="item"><strong>Thé Marocain — 4.0 DT</strong></div>
+    <div class="item"><strong>Thé aux amandes — 8.0 DT</strong></div>
+    <div class="item"><strong>Thé aux pignons — 12.0 DT</strong></div>
+    <div class="item"><strong>Thé aux fruits secs — 10.0 DT</strong></div>
+    <div class="item full"><strong>Thé infusion au choix — 5.0 DT</strong></div>
+    <div class="item"><strong>Tisane — 5.0 DT</strong></div>
+    <div class="item full"><strong>Thé Twins (2 pax – fruits secs) — 16.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="supplementsboissons">
+  <h2>Suppléments (Boissons)</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Arôme au choix — 3.0 DT</strong></div>
+    <div class="item"><strong>Nestlé — 3.0 DT</strong></div>
+    <div class="item"><strong>Amandes — 3.0 DT</strong></div>
+    <div class="item full"><strong>Chocolat twins — 3.0 DT</strong></div>
+    <div class="item"><strong>Crème chantilly — 3.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosglaces">
+  <h2>Nos Glaces</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="glace.png" alt="glace" style="width:190px;height:100px;margin-left: 50px;" >
+  <div class="menu">
+    <div class="item full"><strong>Piccolo (3 boules parfum au choix) — 12.0 DT</strong></div>
+    <div class="item"><strong>Magnum (2 boules parfum au choix – Nutella, fruits secs, oreo, chocolat blanc) — 17.0 DT</strong></div>
+    <div class="item"><strong>Banana Split — 15.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosglacesitalien">
+  <h2>Nos Glaces Italiennes</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Yaourt glacé (3 boules) — 17.0 DT</strong></div>
+    <div class="item"><strong>Grandi (3 parfums: Pistache, framboise, cookies) — 20.0 DT</strong></div>
+    <div class="item full"><strong>Il dolce Twins (Fruit de saison, 3 parfums: Pistache, framboise, cookies) — 25.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="supplementsglaces">
+  <h2>Suppléments (Glaces)</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Pignons — 8.0 DT</strong></div>
+    <div class="item"><strong>Fruits secs — 6.0 DT</strong></div>
+    <div class="item"><strong>Crème chantilly — 3.0 DT</strong></div>
+    <div class="item"><strong>Amandes — 4.0 DT</strong></div>
+    <div class="item full"><strong>Mousse chocolat — 4.0 DT</strong></div>
+    <div class="item"><strong>Mousse vanille — 4.0 DT</strong></div>
+    <div class="item"><strong>Boule de glace — 5.0 DT</strong></div>
+    <div class="item full"><strong>Boule de glace italienne — 7.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nossmoothies">
+  <h2>Nos Smoothies</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="smoothies.png" alt="" style="width:190px;height:100px;margin-left: 50px;">
+  <div class="menu">
+    <div class="item full"><strong>Tropical — 13.0 DT</strong><span>mangue, kiwi, ananas, banane</span></div>
+    <div class="item"><strong>Exotique (pina colada) — 14.0 DT</strong></div>
+    <div class="item full"><strong>Green — 13.0 DT</strong><span>pomme, kiwi</span></div>
+    <div class="item"><strong>Fraise — 13.0 DT</strong></div>
+    <div class="item"><strong>Framboise — 13.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosfrappuccinos">
+  <h2>Nos Frappuccinos</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Classic — 12.0 DT</strong><span>vanille</span></div>
+    <div class="item full"><strong>Spécial — 14.0 DT</strong><span>Nutella ou Spéculos ou Oréo</span></div>
+  </div>
+</section>
+
+<section id="nosmilkshakes">
+  <h2>Nos Milk Shakes</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Classic — 13.0 DT</strong><span>fraise, vanille, chocolat</span></div>
+    <div class="item"><strong>Oréo — 14.0 DT</strong></div>
+    <div class="item"><strong>Spéculos — 14.0 DT</strong></div>
+    <div class="item"><strong>Nutella — 14.0 DT</strong></div>
+    <div class="item"><strong>Nutella Oréo — 15.0 DT</strong></div>
+    <div class="item"><strong>Twins — 16.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosmocktails">
+  <h2>Nos Mocktails</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Duo — 14.0 DT</strong></div>
+    <div class="item"><strong>Triple — 15.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosdetox">
+  <h2>Nos Detox “Healthy”</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Green Detox — 12.0 DT</strong><span>menthe, epinard, basilic, pomme verte</span></div>
+    <div class="item full"><strong>My Body — 13.0 DT</strong><span>jus d’orange, epinard, basilic</span></div>
+    <div class="item full"><strong>Detox light — 13.0 DT</strong><span>gingembre, miel, jus de citron</span></div>
+  </div>
+</section>
+
+<section id="nosjus">
+  <h2>Nos Jus</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="jus.png" alt="" style="width:190px;height:100px;margin-left: 50px;"   >
+  <div class="menu">
+    <div class="item"><strong>Fraise — 8.5 DT</strong></div>
+    <div class="item"><strong>Fraise aux amandes — 10.0 DT</strong></div>
+    <div class="item"><strong>Lait de poule — 10.0 DT</strong></div>
+    <div class="item"><strong>Kiwi — 10.0 DT</strong></div>
+    <div class="item"><strong>Orange — 9.0 DT</strong></div>
+    <div class="item"><strong>Citronnade — 8.5 DT</strong></div>
+    <div class="item"><strong>Citronnade aux amandes — 10.0 DT</strong></div>
+    <div class="item"><strong>Bsissa traditionnel — 10.0 DT</strong></div>
+    <div class="item"><strong>Grenade — 7.0 DT</strong></div>
+    <div class="item"><strong>Pomme — 8.5 DT</strong></div>
+    <div class="item"><strong>Pêche — 10.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="supplements">
+  <h2>Suppléments</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Crème chantilly — 4.0 DT</strong></div>
+    <div class="item"><strong>Fruit sec — 5.0 DT</strong></div>
+    <div class="item"><strong>Boule de glace — 5.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="noscocktails">
+  <h2>Nos Cocktails</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Luky Luke — 13.0 DT</strong><span>kiwi, banane</span></div>
+    <div class="item full"><strong>Laurel et Hardy — 13.0 DT</strong><span>banane et fraise</span></div>
+    <div class="item full"><strong>Romeo et Juliette — 14.0 DT</strong><span>datte, kiwi, banane</span></div>
+    <div class="item full"><strong>Zina et Aziza — 15.0 DT</strong><span>datte, banane, fraise</span></div>
+    <div class="item full"><strong>Twins XXL — 16.0 DT</strong><span>fruits, miel et fruits secs</span></div>
+  </div>
+</section>
+
+<section id="nosgateaux">
+  <h2>Nos Gâteaux</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="cake.png" alt="" style="width:190px;height:100px;margin-left: 50px;"  >
+  <div class="menu">
+    <div class="item full"><strong>Fondant — 12.0 DT</strong><span>chocolat, noisette, pistache, framboise</span></div>
+    <div class="item"><strong>Tiramisu — 10.0 DT</strong></div>
+    <div class="item"><strong>Tiramisu spéculos / citron — 11.0 DT</strong></div>
+    <div class="item"><strong>Nougat glacé — 14.0 DT</strong></div>
+    <div class="item"><strong>Cheese cake au choix — 12.0 DT</strong></div>
+    <div class="item"><strong>Forêt noire — 12.0 DT</strong></div>
+    <div class="item"><strong>Red Velvet — 12.0 DT</strong></div>
+    <div class="item"><strong>Gâteau fait maison — 10.0 DT</strong></div>
+    <div class="item full"><strong>Roulé — 7.5 DT</strong><span>chocolat, noisette ou pistache</span></div>
+    <div class="item"><strong>Gâteau biscuits — 9.0 DT</strong></div>
+    <div class="item"><strong>Eclipse pistache fruits rouges — 9.0 DT</strong></div>
+    <div class="item"><strong>Assida zgougou — 12.0 DT</strong></div>
+    <div class="item"><strong>Droaa — 9.0 DT</strong></div>
+    <div class="item"><strong>Crème brûlée — 12.0 DT</strong></div>
+    <div class="item"><strong>Pâtisserie Tunisienne — 14.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosgateauxclassiques">
+  <h2>Gâteaux Classiques</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Tarte fruits au choix — 9.0 DT</strong><span>fruits, amandes, noisette</span></div>
+    <div class="item"><strong>Opéra — 9.0 DT</strong></div>
+    <div class="item"><strong>Mozart — 10.0 DT</strong></div>
+    <div class="item"><strong>Gâteau mousse 3 chocolats — 10.0 DT</strong></div>
+    <div class="item"><strong>Gâteau pistache et framboise — 10.0 DT</strong></div>
+    <div class="item full"><strong>Gâteau Russe — 10.0 DT</strong><span>noisette, pistache</span></div>
+    <div class="item"><strong>Gâteau Ottello — 10.0 DT</strong></div>
+    <div class="item"><strong>Gâteau noisette chocolat — 10.0 DT</strong></div>
+    <div class="item"><strong>Gâteau noix caramel — 9.0 DT</strong></div>
+    <div class="item"><strong>Lacté croquant — 10.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosviennoiseries">
+  <h2>Nos Viennoiseries</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item"><strong>Croissant aux amandes — 4.0 DT</strong></div>
+    <div class="item"><strong>Croissant nature — 3.5 DT</strong></div>
+    <div class="item"><strong>Pain au chocolat — 4.0 DT</strong></div>
+    <div class="item"><strong>Cake — 4.5 DT</strong></div>
+    <div class="item"><strong>Cake orange — 5.0 DT</strong></div>
+    <div class="item"><strong>Cake citron — 5.0 DT</strong></div>
+  </div>
+</section>
+
+<section id="nosdesserts">
+  <h2>Nos Desserts</h2>
+  <a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a><img src="fon.png" alt="dessert" style="width:190px;height:100px;margin-left: 50px;"   >
+  <div class="menu">
+    <div class="item"><strong>Salade de fruits — 12.0 DT</strong></div>
+    <div class="item"><strong>Ardoise de fruits (pas assiette) — 15.0 DT</strong></div>
+    <div class="item full"><strong>Délice — 20.0 DT</strong><span>fruits, crème brûlée, fondant</span></div>
+  </div>
+</section>
+
+<section id="chicha">
+  <h2>Chicha</h2><a href="#header" class="menu-icon-top">
+    <img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;">
+  </a>
+  <div class="menu">
+    <div class="item full"><strong>Chicha au choix (servi à la terrasse) — 15.0 DT</strong></div>
   </div>
 </section>
 
 <footer>
-  © 2026 Café de la Rue — Fait avec amour à la française
+  © 2026 Café Twins <br>
+  <small>Good coffee • Sweet moments</small>
 </footer>
 
 </body>
 </html>
+
