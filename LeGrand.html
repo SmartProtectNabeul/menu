@@ -5,160 +5,206 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Café Vintage Français</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f4efe6;
-      --ink:#2b2b2b;
-      --accent:#8b5e3c;
-      --border:#c9b79c;
-    }
-
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      font-family:'Libre Baskerville', serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
-    }
-
-    header{
-      text-align:center;
-      padding:60px 20px 40px;
-      border-bottom:2px solid var(--border);
-      background:#efe6d8;
-    }
-
-    header h1{
-      font-family:'Playfair Display', serif;
-      font-size:3rem;
-      margin:0;
-      letter-spacing:2px;
-    }
-
-    header p{
-      margin-top:10px;
-      font-style:italic;
-    }
-
-    nav{
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      margin-top:25px;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:var(--ink);
-      font-weight:bold;
-      border-bottom:2px solid transparent;
-      padding-bottom:4px;
-    }
-
-    nav a:hover{
-      border-color:var(--accent);
-    }
-
-    section{
-      max-width:900px;
-      margin:60px auto;
-      padding:0 20px;
-    }
-
-    h2{
-      font-family:'Playfair Display', serif;
-      font-size:2.2rem;
-      text-align:center;
-      margin-bottom:40px;
-      position:relative;
-    }
-
-    h2::after{
-      content:"";
-      width:80px;
-      height:2px;
-      background:var(--accent);
-      display:block;
-      margin:15px auto 0;
-    }
-
-    .menu{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px 60px;
-    }
-
-    .item{
-      border-bottom:1px dashed var(--border);
-      padding-bottom:10px;
-    }
-
-    .item strong{
-      display:block;
-      font-family:'Playfair Display', serif;
-      font-size:1.1rem;
-    }
-
-    .item span{
-      font-size:0.9rem;
-      font-style:italic;
-    }
-
-    .full{
-      grid-column:1/-1;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      border-top:2px solid var(--border);
-      background:#efe6d8;
-      font-size:0.9rem;
-    }
-
-    @media(max-width:768px){
-      .menu{grid-template-columns:1fr;}
-      header h1{font-size:2.3rem;}
-    }
+  <link rel="stylesheet" href="style.css">
   </style>
   <link rel="icon" type="grand.png" href="favicon.ico">
 </head>
+<style>.menu .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.menu .item strong:nth-child(2) {
+  flex-shrink: 0;
+  font-size: 1.2em;
+  color: #d4a017;
+}
+</style>
 <body>
 
-<header>
+<header id="header">
   <h1>Café LE GRAND Nabeul</h1> <img src="grand.png" alt="A small icon" style="width: 100px;height:100px;vertical-align:middle;border-radius: 50%;">
   <p>menu</p>
   <nav>
-    <a href="#boissons">Boissons</a>
-    <a href="#desserts">Desserts</a>
+    <a href="#café">Cafés</a>
+    <a href="#eau">Eau</a>
+    <a href="#sodas">Sodas</a>
+    <a href="#thé">Thé</a>
+    <a href="#jus">Jus</a>
+    <a href="#patisserie">Gateau</a>
   </nav>
 </header>
 
-<section id="boissons">
-  <h2>Boissons</h2>
+<section id="café">
+  <h2>Cafés / قهوة</h2>
+  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
   <div class="menu">
-    <div class="item"><strong>Express — 2 DT</strong><span>Expresso corsé</span></div>
-    <div class="item"><strong>Capuccin — 2.5 DT</strong><span>Mousse de lait onctueuse</span></div>
-    <div class="item"><strong>Direct — 2.5 DT</strong><span>Café intense et rapide</span></div>
-    <div class="item"><strong>Chocolat au lait — 2.5 DT</strong><span>Chocolat crémeux et lait chaud</span></div>
-<div class="item"><strong>Nescafé — 2.5 DT</strong><span>Café instantané parfumé</span></div>
-<div class="item full"><strong>Chocolat chaud — 2.5 DT</strong><span>Cacao riche et velouté</span></div>
+    <div class="item">
+      <span><strong>Express</strong><br></span>
+      <strong>2 DT</strong>
+      <span><strong>قهوة سريعة</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Capuccin</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>كابتشينو</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Direct</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>ديريكت</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Chocolat au lait</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>شوكولاته بالحليب</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Nescafé</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>نسكافيه</strong></span>
+    </div>
+    <div class="item full">
+      <span><strong>Chocolat chaud</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>شوكولاته ساخنة</strong></span>
+    </div>
+    <div class="item full">
+      <span><strong>CAFÉ AU LAIT</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>قهوة حليب</strong></span>
+    </div>
+  </div>
+</section>
 
+<section id="eau">
+  <h2> Eau /  الماء</h2>
+  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
+  <div class="menu">
+    <div class="item">
+      <span><strong>EAU 0.5 L</strong><br></span>
+      <strong>-</strong>
+      <span><strong>ماء نصف لتر</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>EAU 1 L</strong><br></span>
+      <strong>2 DT</strong>
+      <span><strong>ماء لتر</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>EAU 1.5 L</strong><br></span>
+      <strong>-</strong>
+      <span><strong>ماء 1.5 لتر</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Garci</strong><br></span>
+      <strong>3 DT</strong>
+      <span><strong>قارسي</strong></span>
+    </div>
+  </div>
+</section>
+
+<section id="sodas">
+  <h2> Sodas /  الصودا</h2>
+  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
+  <div class="menu">
+    <div class="item">
+      <span><strong>BOUTEILLE</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>قارورة</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Cantte</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>صودا</strong></span>
+    </div>
+  </div>
+</section>
+
+<section id="thé">
+  <h2> Thé /  الشاي</h2>
+  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
+  <div class="menu">
+    <div class="item">
+      <span><strong>THÉ VERT</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>شاي أخضر</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>THÉ À LA MENTHE</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>شاي بالنعناع</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>THÉ AUX AMANDES</strong><br></span>
+      <strong>2.5 DT</strong>
+      <span><strong>شاي باللوز</strong></span>
+    </div>
+  </div>
+</section>
+
+<section id="jus">
+  <h2> Jus /  العصير</h2>
+  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
+  <div class="menu">
+       <div class="item">
+      <span><strong>ORANGE</strong><br></span>
+      <strong>-</strong>
+      <span><strong>عصير برتقال</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>CITRON</strong><br></span>
+      <strong>-</strong>
+      <span><strong>عصير ليمون</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>FRAISE</strong><br></span>
+      <strong>-</strong>
+      <span><strong>عصير فراولة</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>LAIT DE POULE</strong><br></span>
+      <strong>-</strong>
+      <span><strong>عصير موز بالحليب</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>COCKTAIL DE FRUITS</strong><br></span>
+      <strong>-</strong>
+      <span><strong>عصير غلال</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>Mojito</strong><br></span>
+      <strong>-</strong>
+      <span><strong>موخيتو</strong></span>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="patisserie">
+  <h2>Gâteaux / حلويات</h2>
+  <div class="menu">
+    <div class="item">
+      <span><strong>CROISSANT</strong><br></span>
+      <strong>2</strong>
+      <span><strong>كرواسون</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>GÂTEAUX</strong><br></span>
+      <strong>-</strong>
+      <span><strong>حلويات</strong></span>
+    </div>
+    <div class="item">
+      <span><strong>CAKE</strong><br></span>
+      <strong>2</strong>
+      <span><strong>كيك</strong></span>
+    </div>
   </div>
 </section>
 
 
 
-<section id="desserts">
-  <h2>Desserts</h2>
-  <div class="menu">
-    <div class="item"><strong>Tarte aux Pommes — 7 DT</strong><span>Pâte maison</span></div>
-    <div class="item"><strong>Crème Brûlée — 7 DT</strong><span>Vanille de Madagascar</span></div>
-    <div class="item"><strong>Fondant au Chocolat — 8 DT</strong><span>Cœur coulant</span></div>
-    <div class="item"><strong>Mousse au Chocolat — 8 DT</strong><span>Recette traditionnelle</span></div>
-  </div>
-</section>
 
 <footer>
   © 2026 Café LE GRAND Nabeul — Fait avec amour
