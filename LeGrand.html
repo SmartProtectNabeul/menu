@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Café LE GRAND Nabeul</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
@@ -20,6 +21,65 @@
   font-size: 1.2em;
   color: #d4a017;
 }
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;  /* Left | Center | Right */
+    gap: 20px;
+    align-items: start;
+}
+
+.item {
+    display: contents;  /* Makes children use parent grid */
+    border-bottom: 1px dashed #c9b79c;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 10px;
+}
+
+.item span:first-child {
+    grid-column: 1;     /* Left column */
+}
+
+.price {
+    grid-column: 2;     /* Center column */
+    justify-self: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.item span:last-child {
+    grid-column: 3;     /* Right column */
+    justify-self: end;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: 1fr;  /* Single column */
+        gap: 10px;
+    }
+    
+    .item span:first-child { 
+        grid-column: 1;
+        text-align: left;
+    }
+    
+    .price { 
+        grid-column: 1;
+        justify-self: center;
+    }
+    
+    .item span:last-child { 
+        grid-column: 1;
+        justify-self: center;
+        text-align: center;
+    }
+}
+
+
 </style>
 <body>
 
@@ -42,37 +102,37 @@
   <div class="menu">
     <div class="item">
       <span><strong>Express</strong><br></span>
-      <strong>2.5 DT</strong>
+      <strong class="price">2.5 DT</strong>
       <span><strong>قهوة سريعة</strong></span>
     </div>
     <div class="item">
       <span><strong>Capuccin</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>كابتشينو</strong></span>
     </div>
     <div class="item">
       <span><strong>Direct</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>ديريكت</strong></span>
     </div>
     <div class="item">
       <span><strong>Chocolat au lait</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>شوكولاته<br> بالحليب</strong></span>
     </div>
     <div class="item">
       <span><strong>Nescafé</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>نسكافيه</strong></span>
     </div>
     <div class="item full">
       <span><strong>Chocolat chaud</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>شوكولاته<br> ساخنة</strong></span>
     </div>
     <div class="item full">
       <span><strong>CAFÉ AU LAIT</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>قهوة حليب</strong></span>
     </div>
   </div>
@@ -84,22 +144,22 @@
   <div class="menu">
     <div class="item">
       <span><strong>EAU 0.5 L</strong><br></span>
-      <strong>1.5 DT</strong>
+      <strong class="price">1.5 DT</strong>
       <span><strong>ماء نصف لتر</strong></span>
     </div>
     <div class="item">
       <span><strong>EAU 1 L</strong><br></span>
-      <strong>2.5 DT</strong>
+      <strong class="price">2.5 DT</strong>
       <span><strong>ماء لتر</strong></span>
     </div>
     <div class="item">
       <span><strong>EAU 1.5 L</strong><br></span>
-      <strong>2.5 DT</strong>
+      <strong class="price">2.5 DT</strong>
       <span><strong>ماء 1.5 لتر</strong></span>
     </div>
     <div class="item">
       <span><strong>Garci</strong><br></span>
-      <strong>2.5 DT</strong>
+      <strong class="price">2.5 DT</strong>
       <span><strong>قارسي</strong></span>
     </div>
   </div>
@@ -111,12 +171,12 @@
   <div class="menu">
     <div class="item">
       <span><strong>BOUTEILLE</strong><br></span>
-      <strong>3 DT</strong>
+      <strong class="price">3 DT</strong>
       <span><strong>قارورة</strong></span>
     </div>
     <div class="item">
       <span><strong>Canette</strong><br></span>
-      <strong>3.5 DT</strong>
+      <strong class="price">3.5 DT</strong>
       <span><strong>صودا</strong></span>
     </div>
   </div>
