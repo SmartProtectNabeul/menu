@@ -234,8 +234,62 @@
         }
     </style><!--[if IE]>
 <style>
-* { box-sizing: border-box; } /* Fixes IE box model */
-body { zoom: 1; } /* Forces repaint */
+/* TOTAL IE RESET - replaces all your fancy gradients/flex with solid colors */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background: rgb(239, 230, 216) !important; /* #efe6d8 solid */
+    font-family: Arial, sans-serif !important;
+    text-align: center;
+    padding: 10px;
+}
+
+.book-container, #flipbook { 
+    width: 95% !important; 
+    max-width: 900px !important; 
+    height: 600px !important; 
+    margin: 0 auto !important;
+    background: rgb(139, 69, 19) !important; /* #8B4513 saddle brown */
+    border: 3px solid #654321 !important;
+}
+
+.cover { 
+    background: rgb(235, 203, 171) !important; /* #ebcbab */
+    color: black !important;
+    padding: 40px 20px !important;
+    height: 100% !important;
+}
+
+.cafe-name { 
+    font-size: 48px !important; 
+    font-weight: bold !important; 
+    color: #8B4513 !important;
+    text-shadow: 2px 2px 4px #000 !important;
+}
+
+.nav-link { 
+    display: inline-block !important;
+    background: rgb(255, 255, 255) !important; /* Solid white buttons */
+    color: #8B4513 !important;
+    padding: 12px 16px !important;
+    margin: 5px !important;
+    border: 2px solid #FF6B35 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+.menu-page { 
+    background: rgb(255, 248, 244) !important; /* #f8f7f4 */
+    padding: 20px !important;
+}
+
+.menu-item { 
+    background: rgb(255, 255, 255) !important;
+    border: 2px solid #ddd !important;
+    padding: 15px !important;
+    margin: 10px 0 !important;
+}
+
+.item-price { color: rgb(255, 107, 53) !important; font-weight: bold !important; }
 </style>
 <![endif]-->
 </head>
