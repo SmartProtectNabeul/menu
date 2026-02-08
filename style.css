@@ -1,17 +1,38 @@
-:root{
-    --bg:#f4efe6;
-    --ink:#2b2b2b;
-    --accent:#8b5e3c;
-    --border:#c9b79c;
+:root {
+    --bg: #f4efe6; /* fallback */
+    background-color: #f4efe6; /* beige background */
+    
+    --ink: #2b2b2b; /* fallback */
+    color: #2b2b2b; /* dark text */
+    
+    --accent: #8b5e3c; /* fallback */
+    
+    --border: #c9b79c; /* fallback */
+    border-color: #c9b79c;
 }
+
+/* Modern browsers get the full vars */
+@supports (--css: vars) {
+    :root {
+        --bg: #f4efe6;
+        --ink: #2b2b2b;
+        --accent: #8b5e3c;
+        --border: #c9b79c;
+        
+        background-color: var(--bg);
+        color: var(--ink);
+        border-color: var(--border);
+    }
+}
+
 
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background: #f4efe6;      /* IE fallback */
-    background: var(--bg);    /* Modern browsers */
+    background-color: var(--bg, #f4efe6);
+    color: var(--ink, #2b2b2b);
     color: #2b2b2b;
     color: var(--ink);
     line-height: 1.6;
