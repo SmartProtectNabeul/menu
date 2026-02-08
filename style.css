@@ -1,50 +1,22 @@
-:root {
-    --bg: #f4efe6; /* fallback */
-    background-color: #f4efe6; /* beige background */
-    
-    --ink: #2b2b2b; /* fallback */
-    color: #2b2b2b; /* dark text */
-    
-    --accent: #8b5e3c; /* fallback */
-    
-    --border: #c9b79c; /* fallback */
-    border-color: #c9b79c;
+
+
+* {
+    box-sizing: border-box;
 }
-
-/* Modern browsers get the full vars */
-@supports (--css: vars) {
-    :root {
-        --bg: #f4efe6;
-        --ink: #2b2b2b;
-        --accent: #8b5e3c;
-        --border: #c9b79c;
-        
-        background-color: var(--bg);
-        color: var(--ink);
-        border-color: var(--border);
-    }
-}
-
-
-* { box-sizing: border-box; }
 
 body {
+    background-color: #f4efe6;
     margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background-color: var(--bg, #f4efe6);
-    color: var(--ink, #2b2b2b);
-    color: #2b2b2b;
-    color: var(--ink);
+    color: #2b2b2b;  /* Fixed: removed duplicate/conflicting color declarations */
     line-height: 1.6;
 }
 
 header {
-    background: #efe6d8;        /* IE fallback */
-    background: var(--bg-accent, #efe6d8);  /* Uses root --bg if defined, else fallback */
+    background: #efe6d8;
     text-align: center;
     padding: 60px 20px 40px;
     border-bottom: 2px solid #c9b79c;
-    border-bottom: 2px solid var(--border);
 }
 
 header h4 {
@@ -69,7 +41,6 @@ nav {
 nav a {
     text-decoration: none;
     color: #2b2b2b;
-    color: var(--ink);
     font-weight: bold;
     border-bottom: 2px solid transparent;
     padding-bottom: 4px;
@@ -77,7 +48,6 @@ nav a {
 
 nav a:hover {
     border-bottom-color: #8b5e3c;
-    border-bottom-color: var(--accent);
 }
 
 section {
@@ -99,7 +69,6 @@ h2::after {
     width: 80px;
     height: 2px;
     background: #8b5e3c;
-    background: var(--accent);
     display: block;
     margin: 15px auto 0;
 }
@@ -112,7 +81,6 @@ h2::after {
 
 .item {
     border-bottom: 1px dashed #c9b79c;
-    border-bottom: 1px dashed var(--border);
     padding-bottom: 10px;
 }
 
@@ -135,14 +103,16 @@ footer {
     text-align: center;
     padding: 40px 20px;
     border-top: 2px solid #c9b79c;
-    border-top: 2px solid var(--border);
     background: #efe6d8;
     font-size: 0.9rem;
     margin-top: 60px;
 }
 
 @media (max-width: 768px) {
-    .menu { grid-template-columns: 1fr; }
-    header h1 { font-size: 2.3rem; }  /* Note: h1 not in original, kept for completeness */
-    nav { flex-wrap: wrap; }
+    .menu { 
+        grid-template-columns: 1fr; 
+    }
+    nav { 
+        flex-wrap: wrap; 
+    }
 }
