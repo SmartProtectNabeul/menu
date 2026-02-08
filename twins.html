@@ -232,66 +232,40 @@
             font-size: 0.9em;
             opacity: 0.8;
         }
-    </style><!--[if IE]>
-<style>
-/* TOTAL IE RESET - replaces all your fancy gradients/flex with solid colors */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    background: rgb(239, 230, 216) !important; /* #efe6d8 solid */
-    font-family: Arial, sans-serif !important;
-    text-align: center;
-    padding: 10px;
-}
-
-.book-container, #flipbook { 
-    width: 95% !important; 
-    max-width: 900px !important; 
-    height: 600px !important; 
-    margin: 0 auto !important;
-    background: rgb(139, 69, 19) !important; /* #8B4513 saddle brown */
-    border: 3px solid #654321 !important;
-}
-
-.cover { 
-    background: rgb(235, 203, 171) !important; /* #ebcbab */
-    color: black !important;
-    padding: 40px 20px !important;
-    height: 100% !important;
-}
-
-.cafe-name { 
-    font-size: 48px !important; 
-    font-weight: bold !important; 
-    color: #8B4513 !important;
-    text-shadow: 2px 2px 4px #000 !important;
-}
-
-.nav-link { 
-    display: inline-block !important;
-    background: rgb(255, 255, 255) !important; /* Solid white buttons */
-    color: #8B4513 !important;
-    padding: 12px 16px !important;
-    margin: 5px !important;
-    border: 2px solid #FF6B35 !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-}
-
-.menu-page { 
-    background: rgb(255, 248, 244) !important; /* #f8f7f4 */
-    padding: 20px !important;
-}
-
-.menu-item { 
-    background: rgb(255, 255, 255) !important;
-    border: 2px solid #ddd !important;
-    padding: 15px !important;
-    margin: 10px 0 !important;
-}
-
-.item-price { color: rgb(255, 107, 53) !important; font-weight: bold !important; }
-</style>
-<![endif]-->
+         * { box-sizing: border-box; }
+    
+    /* Force IE to use solid colors instead of gradients */
+    body, header, footer {
+        background-color: rgb(244, 239, 230) !important;
+        background-image: none !important;
+    }
+    
+    /* Kill gradients - IE can't render them */
+    [style*="linear-gradient"],
+    body[class],
+    header[class],
+    .cover[class] {
+        background: rgb(244, 239, 230) !important;
+        background-color: rgb(244, 239, 230) !important;
+    }
+    
+    /* Solid colors for your problem colors */
+    [style*="#c9b79c"],
+    [style*="#efe6d8"] {
+        background-color: rgb(201, 183, 156) !important;
+        border-color: rgb(201, 183, 156) !important;
+    }
+    
+    /* Force table layout for your menu grid */
+    .menu {
+        display: table !important;
+        width: 100% !important;
+    }
+    
+    .item {
+        display: table-row !important;
+    }
+    </style>
 </head>
 <body>
     <div class="book-container">
