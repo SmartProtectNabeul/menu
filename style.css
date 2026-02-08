@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f4efe6;
+    background-color: rgb(244, 239, 230); 
     margin: 0;
     font-family: 'Libre Baskerville', serif;
     color: #2b2b2b;  /* Fixed: removed duplicate/conflicting color declarations */
