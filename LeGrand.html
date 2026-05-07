@@ -12,6 +12,10 @@
   <link rel="preload" href="grand.png" as="image">
   <link rel="icon" type="image/x-icon" href="grand.png">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
     .menu {
       display: flex;
       flex-direction: column;
@@ -21,14 +25,15 @@
     }
 
     .menu .item {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       padding: 16px 20px;
       background: var(--card-bg, #ffffff);
       border: 1px solid rgba(139, 69, 19, 0.1);
       border-radius: 4px;
       transition: all 0.2s ease;
+      gap: 15px;
     }
 
     .menu .item:hover {
@@ -37,20 +42,19 @@
     }
 
     .menu .item > span:first-child {
-      flex: 1;
       text-align: left;
       font-size: 1.05rem;
       color: var(--text-main, #2d1b14);
     }
 
     .menu .item > span:last-child {
-      flex: 1;
       text-align: right;
       font-size: 1.05rem;
       color: var(--text-muted, #6b5a52);
     }
 
-    .menu .item .price {
+    .menu .item > strong {
+      text-align: center;
       padding: 4px 12px;
       font-size: 1.1rem;
       font-weight: bold;
@@ -58,26 +62,25 @@
       border: 1px solid rgba(216, 75, 18, 0.2);
       border-radius: 4px;
       white-space: nowrap;
-      margin: 0 15px;
+      margin: 0;
+      justify-self: center;
     }
 
-    /* Mobile: Stack vertically */
+    /* Mobile: Keep Grid but smaller */
     @media (max-width: 768px) {
       .menu .item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-        padding: 15px;
+        padding: 12px 10px;
+        gap: 8px;
       }
 
       .menu .item > span:first-child,
       .menu .item > span:last-child {
-        text-align: center;
+        font-size: 0.9rem;
       }
       
-      .menu .item .price {
-        margin: 5px 0;
+      .menu .item > strong {
+        font-size: 0.95rem;
+        padding: 3px 8px;
       }
     }
     
@@ -143,16 +146,33 @@
       transform: translateX(-50%);
     }
 
-    .menu-icon-top {
-      display: block;
-      margin: 0 auto 20px;
-      width: 32px;
-      opacity: 0.7;
-      transition: opacity 0.2s;
+    .fab-up {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-color, #8B4513);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 1000;
     }
-    
-    .menu-icon-top:hover {
+    .fab-up.show {
       opacity: 1;
+      pointer-events: auto;
+    }
+    .fab-up:hover {
+      transform: translateY(-3px);
+      background: var(--secondary-color, #d84b12);
     }
     
     footer {
@@ -183,8 +203,6 @@
 
   <section id="café">
     <h2>Cafés / قهوة</h2>
-    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
-        style="width: 32px; height: 32px; display: block;"></a>
     <div class="menu">
       <div class="item">
         <span><strong>Express</strong><br></span>
@@ -226,8 +244,6 @@
 
   <section id="eau">
     <h2> Eau / الماء</h2>
-    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
-        style="width: 32px; height: 32px; display: block;"></a>
     <div class="menu">
       <div class="item">
         <span><strong>EAU 0.5 L</strong><br></span>
@@ -254,8 +270,6 @@
 
   <section id="sodas">
     <h2> Sodas / الصودا</h2>
-    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
-        style="width: 32px; height: 32px; display: block;"></a>
     <div class="menu">
       <div class="item">
         <span><strong>BOUTEILLE</strong><br></span>
@@ -272,8 +286,6 @@
 
   <section id="thé">
     <h2> Thé / الشاي</h2>
-    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
-        style="width: 32px; height: 32px; display: block;"></a>
     <div class="menu">
       <div class="item">
         <span><strong>THÉ VERT</strong><br></span>
@@ -295,8 +307,6 @@
 
   <section id="jus">
     <h2> Jus / العصير</h2>
-    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
-        style="width: 32px; height: 32px; display: block;"></a>
     <div class="menu">
       <div class="item">
         <span><strong>ORANGE</strong><br></span>
@@ -333,8 +343,6 @@
   </section>
 
   <section id="patisserie">
-    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
-        style="width: 32px; height: 32px; display: block;"></a>
     <h2>Gâteaux / حلويات</h2>
     <div class="menu">
       <div class="item">
@@ -363,6 +371,18 @@
     <p>Soyez le bienvenu</p>
   </footer>
 
+  <a href="#header" id="back-to-top" class="fab-up" title="Haut de page">↑</a>
+
+  <script>
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 
 </html>
