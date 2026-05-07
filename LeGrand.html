@@ -1,281 +1,368 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Café LE GRAND Nabeul</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap"
+    rel="stylesheet">
   <link rel="preload" href="grand.png" as="image">
   <link rel="icon" type="image/x-icon" href="grand.png">
-  <style>.menu .item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.menu .item strong:nth-child(2) {
-  flex-shrink: 0;
-  font-size: 1.2em;
-  color: #d4a017;
-}
-.menu {
-    display: grid;
-    grid-template-columns: 1fr 80px 1fr;  /* Left | Center | Right */
-    gap: 20px;
-    align-items: start;
-}
-
-.item {
-    border-bottom: 1px dashed #c9b79c;
-    padding-bottom: 10px;
-}
-
-.menu {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* name | price | details */
-    gap: 15px;
-    align-items: center;
-}
-
-.item-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.price {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.item-details {
-    font-size: 0.9rem;
-    font-style: italic;
-    text-align: right;
-}
-
-/* Mobile: Stack vertically */
-@media (max-width: 768px) {
+  <style>
     .menu {
-        grid-template-columns: 1fr; /* Single column */
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .menu .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      background: var(--card-bg, #ffffff);
+      border: 1px solid rgba(139, 69, 19, 0.1);
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .menu .item:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-color: rgba(139, 69, 19, 0.2);
+    }
+
+    .menu .item > span:first-child {
+      flex: 1;
+      text-align: left;
+      font-size: 1.05rem;
+      color: var(--text-main, #2d1b14);
+    }
+
+    .menu .item > span:last-child {
+      flex: 1;
+      text-align: right;
+      font-size: 1.05rem;
+      color: var(--text-muted, #6b5a52);
+    }
+
+    .menu .item .price {
+      padding: 4px 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--secondary-color, #d84b12);
+      border: 1px solid rgba(216, 75, 18, 0.2);
+      border-radius: 4px;
+      white-space: nowrap;
+      margin: 0 15px;
+    }
+
+    /* Mobile: Stack vertically */
+    @media (max-width: 768px) {
+      .menu .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         gap: 10px;
-    }
-    
-    .item-name { 
-        text-align: left;
-    }
-    
-    .price { 
+        padding: 15px;
+      }
+
+      .menu .item > span:first-child,
+      .menu .item > span:last-child {
         text-align: center;
+      }
+      
+      .menu .item .price {
         margin: 5px 0;
+      }
     }
     
-    .item-details { 
-        text-align: center;
-        margin-bottom: 10px;
+    header#header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: var(--bg-color, #fdfaf6);
+      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+      margin-bottom: 40px;
+    }
+    
+    header#header h1 {
+      color: var(--primary-color, #8B4513);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+    
+    header#header p {
+      color: var(--text-muted, #6b5a52);
+      font-size: 1.1rem;
+      margin: 10px 0 20px;
+    }
+    
+    header#header nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    header#header nav a {
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid rgba(139, 69, 19, 0.2);
+      color: var(--primary-color, #8B4513);
+      border-radius: 4px;
+      transition: all 0.2s;
+      font-weight: 600;
+    }
+    
+    header#header nav a:hover {
+      background: var(--primary-color, #8B4513);
+      color: #fff;
+    }
+    
+    section {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    
+    section h2 {
+      text-align: center;
+      color: var(--primary-color, #8B4513);
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--secondary-color, #d84b12);
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
+    .menu-icon-top {
+      display: block;
+      margin: 0 auto 20px;
+      width: 32px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
     
-}
-
-
-
-</style>
+    .menu-icon-top:hover {
+      opacity: 1;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-muted, #6b5a52);
+      border-top: 1px solid rgba(139, 69, 19, 0.1);
+      margin-top: 50px;
+    }
+  </style>
 </head>
+
 <body>
 
-<header id="header">
-  <h1>LE GRAND CAFÉ NABEUL</h1> <img src="grand.png" alt="A small icon" style="width: 100px;height:100px;vertical-align:middle;border-radius: 50%;">
-  <p>MENU</p>
-  <nav>
-    <a href="#café">Cafés</a>
-    <a href="#eau">Eau</a>
-    <a href="#sodas">Sodas</a>
-    <a href="#thé">Thé</a>
-    <a href="#jus">Jus</a>
-    <a href="#patisserie">Gateau</a>
-  </nav>
-</header>
+  <header id="header">
+    <h1>LE GRAND CAFÉ NABEUL</h1> <img src="grand.png" alt="A small icon"
+      style="width: 100px;height:100px;vertical-align:middle;border-radius: 50%;">
+    <p>MENU</p>
+    <nav>
+      <a href="#café">Cafés</a>
+      <a href="#eau">Eau</a>
+      <a href="#sodas">Sodas</a>
+      <a href="#thé">Thé</a>
+      <a href="#jus">Jus</a>
+      <a href="#patisserie">Gateau</a>
+    </nav>
+  </header>
 
-<section id="café">
-  <h2>Cafés / قهوة</h2>
-  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
-  <div class="menu">
-    <div class="item">
-      <span><strong>Express</strong><br></span>
-      <strong class="price">2 DT</strong>
-      <span><strong>قهوة سريعة</strong></span>
+  <section id="café">
+    <h2>Cafés / قهوة</h2>
+    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
+        style="width: 32px; height: 32px; display: block;"></a>
+    <div class="menu">
+      <div class="item">
+        <span><strong>Express</strong><br></span>
+        <strong class="price">2 DT</strong>
+        <span><strong>قهوة سريعة</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Capuccin</strong><br></span>
+        <strong class="price">2.5 DT</strong>
+        <span><strong>كابتشينو</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Direct</strong><br></span>
+        <strong class="price">2.5 DT</strong>
+        <span><strong>ديريكت</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Chocolat au lait</strong><br></span>
+        <strong class="price">2.5 DT</strong>
+        <span><strong>شوكولاته<br> بالحليب</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Nescafé</strong><br></span>
+        <strong class="price">2.5 DT</strong>
+        <span><strong>نسكافيه</strong></span>
+      </div>
+      <div class="item full">
+        <span><strong>Chocolat chaud</strong><br></span>
+        <strong class="price">3.5 DT</strong>
+        <span><strong>شوكولاته<br> ساخنة</strong></span>
+      </div>
+      <div class="item full">
+        <span><strong>CAFÉ AU LAIT</strong><br></span>
+        <strong class="price">2.5 DT</strong>
+        <span><strong>قهوة حليب</strong></span>
+      </div>
     </div>
-    <div class="item">
-      <span><strong>Capuccin</strong><br></span>
-      <strong class="price">2.5 DT</strong>
-      <span><strong>كابتشينو</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>Direct</strong><br></span>
-      <strong class="price">2.5 DT</strong>
-      <span><strong>ديريكت</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>Chocolat au lait</strong><br></span>
-      <strong class="price">2.5 DT</strong>
-      <span><strong>شوكولاته<br> بالحليب</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>Nescafé</strong><br></span>
-      <strong class="price">2.5 DT</strong>
-      <span><strong>نسكافيه</strong></span>
-    </div>
-    <div class="item full">
-      <span><strong>Chocolat chaud</strong><br></span>
-      <strong class="price">3.5 DT</strong>
-      <span><strong>شوكولاته<br> ساخنة</strong></span>
-    </div>
-    <div class="item full">
-      <span><strong>CAFÉ AU LAIT</strong><br></span>
-      <strong class="price">2.5 DT</strong>
-      <span><strong>قهوة حليب</strong></span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="eau">
-  <h2> Eau /  الماء</h2>
-  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
-  <div class="menu">
-    <div class="item">
-      <span><strong>EAU 0.5 L</strong><br></span>
-      <strong class="price">1 DT</strong>
-      <span><strong>ماء نصف لتر</strong></span>
+  <section id="eau">
+    <h2> Eau / الماء</h2>
+    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
+        style="width: 32px; height: 32px; display: block;"></a>
+    <div class="menu">
+      <div class="item">
+        <span><strong>EAU 0.5 L</strong><br></span>
+        <strong class="price">1 DT</strong>
+        <span><strong>ماء نصف لتر</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>EAU 1 L</strong><br></span>
+        <strong class="price">2 DT</strong>
+        <span><strong>ماء لتر</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>EAU 1.5 L</strong><br></span>
+        <strong class="price">2 DT</strong>
+        <span><strong>ماء 1.5 لتر</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Garci</strong><br></span>
+        <strong class="price">2 DT</strong>
+        <span><strong>قارسي</strong></span>
+      </div>
     </div>
-    <div class="item">
-      <span><strong>EAU 1 L</strong><br></span>
-      <strong class="price">2 DT</strong>
-      <span><strong>ماء لتر</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>EAU 1.5 L</strong><br></span>
-      <strong class="price">2 DT</strong>
-      <span><strong>ماء 1.5 لتر</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>Garci</strong><br></span>
-      <strong class="price">2 DT</strong>
-      <span><strong>قارسي</strong></span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="sodas">
-  <h2> Sodas /  الصودا</h2>
-  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
-  <div class="menu">
-    <div class="item">
-      <span><strong>BOUTEILLE</strong><br></span>
-      <strong class="price">2.5 DT</strong>
-      <span><strong>قارورة</strong></span>
+  <section id="sodas">
+    <h2> Sodas / الصودا</h2>
+    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
+        style="width: 32px; height: 32px; display: block;"></a>
+    <div class="menu">
+      <div class="item">
+        <span><strong>BOUTEILLE</strong><br></span>
+        <strong class="price">2.5 DT</strong>
+        <span><strong>قارورة</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Canette</strong><br></span>
+        <strong class="price">3 DT</strong>
+        <span><strong>صودا</strong></span>
+      </div>
     </div>
-    <div class="item">
-      <span><strong>Canette</strong><br></span>
-      <strong class="price">3 DT</strong>
-      <span><strong>صودا</strong></span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="thé">
-  <h2> Thé /  الشاي</h2>
-  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
-  <div class="menu">
-    <div class="item">
-      <span><strong>THÉ VERT</strong><br></span>
-      <strong>1.5 DT</strong>
-      <span><strong>شاي أخضر</strong></span>
+  <section id="thé">
+    <h2> Thé / الشاي</h2>
+    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
+        style="width: 32px; height: 32px; display: block;"></a>
+    <div class="menu">
+      <div class="item">
+        <span><strong>THÉ VERT</strong><br></span>
+        <strong>1.5 DT</strong>
+        <span><strong>شاي أخضر</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>THÉ <br>À LA MENTHE</strong><br></span>
+        <strong>1.5 DT</strong>
+        <span><strong>شاي<br> بالنعناع</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>THÉ AUX AMANDES</strong><br></span>
+        <strong>2.5 DT</strong>
+        <span><strong>شاي<br> باللوز</strong></span>
+      </div>
     </div>
-    <div class="item">
-      <span><strong>THÉ <br>À LA MENTHE</strong><br></span>
-      <strong>1.5 DT</strong>
-      <span><strong>شاي<br> بالنعناع</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>THÉ AUX AMANDES</strong><br></span>
-      <strong>2.5 DT</strong>
-      <span><strong>شاي<br> باللوز</strong></span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="jus">
-  <h2> Jus /  العصير</h2>
-  <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
-  <div class="menu">
-       <div class="item">
-      <span><strong>ORANGE</strong><br></span>
-      <strong>3.5 DT</strong>
-      <span><strong>عصير برتقال</strong></span>
+  <section id="jus">
+    <h2> Jus / العصير</h2>
+    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
+        style="width: 32px; height: 32px; display: block;"></a>
+    <div class="menu">
+      <div class="item">
+        <span><strong>ORANGE</strong><br></span>
+        <strong>3.5 DT</strong>
+        <span><strong>عصير برتقال</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>CITRON</strong><br></span>
+        <strong>3.5 DT</strong>
+        <span><strong>عصير ليمون</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>FRAISE</strong><br></span>
+        <strong>4 DT</strong>
+        <span><strong>عصير فراولة</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>LAIT DE POULE</strong><br></span>
+        <strong>4 DT</strong>
+        <span><strong>عصير موز<br> بالحليب</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>COCKTAIL <br> DE FRUITS</strong><br></span>
+        <strong>5.5 DT</strong>
+        <span><strong>عصيرغلال</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>Mojito</strong><br></span>
+        <strong>5.5 DT</strong>
+        <span><strong>موخيتو</strong></span>
+      </div>
     </div>
-    <div class="item">
-      <span><strong>CITRON</strong><br></span>
-      <strong>3.5 DT</strong>
-      <span><strong>عصير ليمون</strong></span>
     </div>
-    <div class="item">
-      <span><strong>FRAISE</strong><br></span>
-      <strong>4 DT</strong>
-      <span><strong>عصير فراولة</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>LAIT DE POULE</strong><br></span>
-      <strong>4 DT</strong>
-      <span><strong>عصير موز<br> بالحليب</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>COCKTAIL <br> DE FRUITS</strong><br></span>
-      <strong>5.5 DT</strong>
-      <span><strong>عصيرغلال</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>Mojito</strong><br></span>
-      <strong>5.5 DT</strong>
-      <span><strong>موخيتو</strong></span>
-    </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="patisserie">
- <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu" style="width: 32px; height: 32px; display: block;"></a>
-  <h2>Gâteaux / حلويات</h2>
-  <div class="menu">
-    <div class="item">
-      <span><strong>CROISSANT</strong><br></span>
-      <strong>2 DT</strong>
-      <span><strong>كرواسون</strong></span>
+  <section id="patisserie">
+    <a href="#header" class="menu-icon-top"><img src="up.png" alt="Menu"
+        style="width: 32px; height: 32px; display: block;"></a>
+    <h2>Gâteaux / حلويات</h2>
+    <div class="menu">
+      <div class="item">
+        <span><strong>CROISSANT</strong><br></span>
+        <strong>2 DT</strong>
+        <span><strong>كرواسون</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>GÂTEAUX</strong><br></span>
+        <strong>2.5 DT</strong>
+        <span><strong>مرطبات</strong></span>
+      </div>
+      <div class="item">
+        <span><strong>CAKE</strong><br></span>
+        <strong>2 DT</strong>
+        <span><strong>كيك</strong></span>
+      </div>
     </div>
-    <div class="item">
-      <span><strong>GÂTEAUX</strong><br></span>
-      <strong>2.5 DT</strong>
-      <span><strong>مرطبات</strong></span>
-    </div>
-    <div class="item">
-      <span><strong>CAKE</strong><br></span>
-      <strong>2 DT</strong>
-      <span><strong>كيك</strong></span>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
 
-<footer>
-  © 2026  LE GRAND Café Nabeul — Fait avec amour
-  <p>Soyez le bienvenu</p>
-</footer>
+  <footer>
+    © 2026 LE GRAND Café Nabeul — Fait avec amour
+    <p>Soyez le bienvenu</p>
+  </footer>
 
 </body>
+
 </html>
